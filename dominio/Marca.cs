@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace winforms
+namespace dominio
 {
-    class Categoria
+    public class Marca
     {
         public int ID { get; set; }
         public string Descripcion { get; set; }
+
     }
 }
