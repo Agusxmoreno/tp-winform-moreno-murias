@@ -59,10 +59,14 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("Insert into ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, ImagenUrl, Precio)values(@Numero, @Nombre, @Descripcion, @idMarca, @idCategoria, @ImagenUrl, @Precio)");
+                datos.setearConsulta("Insert into ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, ImagenUrl, Precio)values(@Codigo, @Nombre, @Descripcion, @idMarca, @idCategoria, @ImagenUrl, @Precio)");
+                datos.setearParametro("@Codigo", nuevo.Codigo);
+                datos.setearParametro("@Nombre", nuevo.Nombre);
+                datos.setearParametro("@Descripcion", nuevo.Descripcion);
                 datos.setearParametro("@idMarca", nuevo.Marca.ID);
                 datos.setearParametro("@idCategoria", nuevo.Categoria.ID);
                 datos.setearParametro("@ImagenUrl", nuevo.ImagenUrl);
+                datos.setearParametro("@Precio", nuevo.Precio);
                 datos.ejecutarAccion();
             }
             catch (Exception ex)
@@ -70,6 +74,7 @@ namespace negocio
 
                 throw ex;
             }
+            finally
             {
                 datos.cerrarConexion();
             }

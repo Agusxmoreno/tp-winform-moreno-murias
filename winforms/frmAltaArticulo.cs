@@ -20,10 +20,6 @@ namespace winforms
             InitializeComponent();
         }
 
-
-
-
-
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -57,6 +53,10 @@ namespace winforms
                     negocio.agregar(articulo);
                     MessageBox.Show("Agregado exitosamente");
                 }
+
+
+                Close();
+
             }
             catch (Exception ex)
             {
@@ -67,7 +67,23 @@ namespace winforms
 
         private void frmAltaArticulo_Load(object sender, EventArgs e)
         {
-            
+            MarcaNegocio marcaNegocio = new MarcaNegocio();
+            CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
+
+            try
+            {
+                cboMarca.DataSource = marcaNegocio.listar();
+                cboMarca.ValueMember = "Id";
+                cboMarca.DisplayMember = "Descripcion";
+                cboCategoria.DataSource = categoriaNegocio.listar();
+                cboCategoria.ValueMember = "Id";
+                cboCategoria.DisplayMember = "Descripcion";
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
     
