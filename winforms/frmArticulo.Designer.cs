@@ -36,7 +36,9 @@ namespace winforms
             this.txtMarca = new System.Windows.Forms.TextBox();
             this.lblCategoria = new System.Windows.Forms.Label();
             this.lblMarca = new System.Windows.Forms.Label();
-            this.lblDescripcion = new System.Windows.Forms.Label();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulos)).BeginInit();
             this.SuspendLayout();
@@ -55,9 +57,9 @@ namespace winforms
             // 
             // pbxArticulos
             // 
-            this.pbxArticulos.Location = new System.Drawing.Point(410, 151);
+            this.pbxArticulos.Location = new System.Drawing.Point(362, 12);
             this.pbxArticulos.Name = "pbxArticulos";
-            this.pbxArticulos.Size = new System.Drawing.Size(173, 136);
+            this.pbxArticulos.Size = new System.Drawing.Size(198, 156);
             this.pbxArticulos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxArticulos.TabIndex = 1;
             this.pbxArticulos.TabStop = false;
@@ -65,66 +67,88 @@ namespace winforms
             // txtDescripcion
             // 
             this.txtDescripcion.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txtDescripcion.Location = new System.Drawing.Point(410, 115);
+            this.txtDescripcion.Location = new System.Drawing.Point(365, 233);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.ReadOnly = true;
-            this.txtDescripcion.Size = new System.Drawing.Size(173, 30);
+            this.txtDescripcion.Size = new System.Drawing.Size(195, 54);
             this.txtDescripcion.TabIndex = 2;
             // 
             // txtCategoria
             // 
             this.txtCategoria.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txtCategoria.Location = new System.Drawing.Point(466, 32);
+            this.txtCategoria.Location = new System.Drawing.Point(451, 176);
             this.txtCategoria.Name = "txtCategoria";
             this.txtCategoria.ReadOnly = true;
-            this.txtCategoria.Size = new System.Drawing.Size(65, 20);
+            this.txtCategoria.Size = new System.Drawing.Size(109, 20);
             this.txtCategoria.TabIndex = 3;
             this.txtCategoria.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtMarca
             // 
             this.txtMarca.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txtMarca.Location = new System.Drawing.Point(466, 73);
+            this.txtMarca.Location = new System.Drawing.Point(451, 205);
             this.txtMarca.Name = "txtMarca";
             this.txtMarca.ReadOnly = true;
-            this.txtMarca.Size = new System.Drawing.Size(65, 20);
+            this.txtMarca.Size = new System.Drawing.Size(109, 20);
             this.txtMarca.TabIndex = 4;
             this.txtMarca.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblCategoria
             // 
             this.lblCategoria.AutoSize = true;
-            this.lblCategoria.Location = new System.Drawing.Point(463, 16);
+            this.lblCategoria.Location = new System.Drawing.Point(362, 182);
             this.lblCategoria.Name = "lblCategoria";
+            this.lblCategoria.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblCategoria.Size = new System.Drawing.Size(72, 13);
             this.lblCategoria.TabIndex = 5;
-            this.lblCategoria.Text = "CATEGORIA:";
+            this.lblCategoria.Text = "CATEGORÍA:";
             // 
             // lblMarca
             // 
             this.lblMarca.AutoSize = true;
-            this.lblMarca.Location = new System.Drawing.Point(474, 57);
+            this.lblMarca.Location = new System.Drawing.Point(362, 209);
             this.lblMarca.Name = "lblMarca";
             this.lblMarca.Size = new System.Drawing.Size(48, 13);
             this.lblMarca.TabIndex = 6;
             this.lblMarca.Text = "MARCA:";
             // 
-            // lblDescripcion
+            // btnAgregar
             // 
-            this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Location = new System.Drawing.Point(456, 99);
-            this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(83, 13);
-            this.lblDescripcion.TabIndex = 7;
-            this.lblDescripcion.Text = "DESCRIPCION:";
+            this.btnAgregar.Location = new System.Drawing.Point(12, 302);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar.TabIndex = 7;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.Location = new System.Drawing.Point(105, 302);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(75, 23);
+            this.btnModificar.TabIndex = 8;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(196, 302);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.TabIndex = 9;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
             // 
             // frmArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(607, 318);
-            this.Controls.Add(this.lblDescripcion);
+            this.ClientSize = new System.Drawing.Size(572, 339);
+            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.btnModificar);
+            this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.lblMarca);
             this.Controls.Add(this.lblCategoria);
             this.Controls.Add(this.txtMarca);
@@ -152,7 +176,9 @@ namespace winforms
         private System.Windows.Forms.TextBox txtMarca;
         private System.Windows.Forms.Label lblCategoria;
         private System.Windows.Forms.Label lblMarca;
-        private System.Windows.Forms.Label lblDescripcion;
+        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }
 
