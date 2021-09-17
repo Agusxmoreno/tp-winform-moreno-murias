@@ -57,9 +57,9 @@ namespace winforms
             // 
             // pbxArticulos
             // 
-            this.pbxArticulos.Location = new System.Drawing.Point(362, 12);
+            this.pbxArticulos.Location = new System.Drawing.Point(393, 24);
             this.pbxArticulos.Name = "pbxArticulos";
-            this.pbxArticulos.Size = new System.Drawing.Size(198, 156);
+            this.pbxArticulos.Size = new System.Drawing.Size(142, 136);
             this.pbxArticulos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxArticulos.TabIndex = 1;
             this.pbxArticulos.TabStop = false;
@@ -77,7 +77,7 @@ namespace winforms
             // txtCategoria
             // 
             this.txtCategoria.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txtCategoria.Location = new System.Drawing.Point(451, 176);
+            this.txtCategoria.Location = new System.Drawing.Point(451, 166);
             this.txtCategoria.Name = "txtCategoria";
             this.txtCategoria.ReadOnly = true;
             this.txtCategoria.Size = new System.Drawing.Size(109, 20);
@@ -87,7 +87,7 @@ namespace winforms
             // txtMarca
             // 
             this.txtMarca.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txtMarca.Location = new System.Drawing.Point(451, 205);
+            this.txtMarca.Location = new System.Drawing.Point(451, 195);
             this.txtMarca.Name = "txtMarca";
             this.txtMarca.ReadOnly = true;
             this.txtMarca.Size = new System.Drawing.Size(109, 20);
@@ -97,7 +97,7 @@ namespace winforms
             // lblCategoria
             // 
             this.lblCategoria.AutoSize = true;
-            this.lblCategoria.Location = new System.Drawing.Point(362, 182);
+            this.lblCategoria.Location = new System.Drawing.Point(377, 169);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblCategoria.Size = new System.Drawing.Size(72, 13);
@@ -107,7 +107,7 @@ namespace winforms
             // lblMarca
             // 
             this.lblMarca.AutoSize = true;
-            this.lblMarca.Location = new System.Drawing.Point(362, 209);
+            this.lblMarca.Location = new System.Drawing.Point(401, 198);
             this.lblMarca.Name = "lblMarca";
             this.lblMarca.Size = new System.Drawing.Size(48, 13);
             this.lblMarca.TabIndex = 6;

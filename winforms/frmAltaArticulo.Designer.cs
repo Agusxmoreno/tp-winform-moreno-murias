@@ -188,9 +188,9 @@ namespace winforms
             // 
             // pbxArticulo
             // 
-            this.pbxArticulo.Location = new System.Drawing.Point(333, 36);
+            this.pbxArticulo.Location = new System.Drawing.Point(348, 36);
             this.pbxArticulo.Name = "pbxArticulo";
-            this.pbxArticulo.Size = new System.Drawing.Size(226, 197);
+            this.pbxArticulo.Size = new System.Drawing.Size(196, 197);
             this.pbxArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxArticulo.TabIndex = 17;
             this.pbxArticulo.TabStop = false;
