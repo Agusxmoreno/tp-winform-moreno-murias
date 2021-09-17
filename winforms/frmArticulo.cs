@@ -110,6 +110,7 @@ namespace winforms
         {
             frmAltaArticulo alta = new frmAltaArticulo();
             alta.ShowDialog();
+            cargar();
         }
 
         private void btnModificar_Click(object sender, EventArgs e)

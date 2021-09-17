@@ -18,7 +18,7 @@ namespace negocio
 
             try
             {
-                datos.setearConsulta("Select A.ID, Codigo, Nombre, A.Descripcion, M.Descripcion as Marca, C.Descripcion as Categoria, ImagenUrl, Precio from Articulos A, Marcas M, CATEGORIAS C where A.IdMarca = M.Id AND A.IdCategoria = C.Id");
+                datos.setearConsulta("Select A.ID, Codigo, Nombre, A.Descripcion, M.Descripcion as Marca, C.Descripcion as Categoria, ImagenUrl, Precio, A.IdMarca, A.IdCategoria from Articulos A, Marcas M, CATEGORIAS C where A.IdMarca = M.Id AND A.IdCategoria = C.Id");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
@@ -31,9 +31,13 @@ namespace negocio
                     aux.Descripcion = (string)datos.Lector["Descripcion"];
 
                     aux.Marca = new Marca();
+                    aux.Marca.ID = (int)datos.Lector["IdMarca"];
+               
                     aux.Marca.Descripcion = (string)datos.Lector["Marca"];
 
                     aux.Categoria = new Categoria();
+                    aux.Categoria.ID = (int)datos.Lector["IdCategoria"];
+
                     aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];
 
                     aux.ImagenUrl = (string)datos.Lector["ImagenUrl"];
@@ -94,7 +98,7 @@ namespace negocio
                 datos.setearParametro("@idCategoria", art.Categoria.ID);
                 datos.setearParametro("@ImagenUrl", art.ImagenUrl);
                 datos.setearParametro("@Precio", art.Precio);
-
+                datos.setearParametro("@ID", art.ID);
                 datos.ejecutarAccion();
             }
             catch (Exception ex)

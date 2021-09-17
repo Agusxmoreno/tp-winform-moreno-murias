@@ -72,7 +72,7 @@ namespace winforms
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.ReadOnly = true;
             this.txtDescripcion.Size = new System.Drawing.Size(195, 54);
-            this.txtDescripcion.TabIndex = 2;
+            this.txtDescripcion.TabIndex = 4;
             // 
             // txtCategoria
             // 
@@ -81,7 +81,7 @@ namespace winforms
             this.txtCategoria.Name = "txtCategoria";
             this.txtCategoria.ReadOnly = true;
             this.txtCategoria.Size = new System.Drawing.Size(109, 20);
-            this.txtCategoria.TabIndex = 3;
+            this.txtCategoria.TabIndex = 6;
             this.txtCategoria.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtMarca
@@ -91,7 +91,7 @@ namespace winforms
             this.txtMarca.Name = "txtMarca";
             this.txtMarca.ReadOnly = true;
             this.txtMarca.Size = new System.Drawing.Size(109, 20);
-            this.txtMarca.TabIndex = 4;
+            this.txtMarca.TabIndex = 5;
             this.txtMarca.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblCategoria
@@ -118,7 +118,7 @@ namespace winforms
             this.btnAgregar.Location = new System.Drawing.Point(12, 302);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
-            this.btnAgregar.TabIndex = 7;
+            this.btnAgregar.TabIndex = 1;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
@@ -128,7 +128,7 @@ namespace winforms
             this.btnModificar.Location = new System.Drawing.Point(105, 302);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
-            this.btnModificar.TabIndex = 8;
+            this.btnModificar.TabIndex = 2;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
@@ -138,7 +138,7 @@ namespace winforms
             this.btnEliminar.Location = new System.Drawing.Point(196, 302);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
-            this.btnEliminar.TabIndex = 9;
+            this.btnEliminar.TabIndex = 3;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             // 
