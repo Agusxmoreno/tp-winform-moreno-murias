@@ -23,15 +23,7 @@ namespace winforms
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            ArticuloNegocio negocio = new ArticuloNegocio();
-            listaArticulos = negocio.listar();
-            dgvArticulos.DataSource = listaArticulos;
-            dgvArticulos.Columns["Id"].Visible = false;
-            dgvArticulos.Columns["Categoria"].Visible = false;
-            dgvArticulos.Columns["Descripcion"].Visible = false;
-            dgvArticulos.Columns["Marca"].Visible = false;
-            dgvArticulos.Columns["ImagenUrl"].Visible = false; 
-            cargarImagen(listaArticulos[0].ImagenUrl);
+            cargar();
         }
 
         private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
@@ -41,6 +33,29 @@ namespace winforms
             cargarDescripcion(seleccionado.Descripcion);
             cargarCategoria(seleccionado.Categoria.Descripcion);
             cargarMarca(seleccionado.Marca.Descripcion);
+        }
+
+        private void cargar()
+        {
+            ArticuloNegocio negocio = new ArticuloNegocio();
+
+            try
+            {
+                listaArticulos = negocio.listar();
+                dgvArticulos.DataSource = listaArticulos;
+                dgvArticulos.Columns["Id"].Visible = false;
+                dgvArticulos.Columns["Categoria"].Visible = false;
+                dgvArticulos.Columns["Descripcion"].Visible = false;
+                dgvArticulos.Columns["Marca"].Visible = false;
+                dgvArticulos.Columns["ImagenUrl"].Visible = false;
+                cargarImagen(listaArticulos[0].ImagenUrl);
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void cargarImagen(string imagen)
@@ -95,6 +110,15 @@ namespace winforms
         {
             frmAltaArticulo alta = new frmAltaArticulo();
             alta.ShowDialog();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            Articulo seleccionado;
+            seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem; 
+            frmAltaArticulo modificar = new frmAltaArticulo(seleccionado);
+            modificar.ShowDialog();
+            cargar();
         }
     }
 }

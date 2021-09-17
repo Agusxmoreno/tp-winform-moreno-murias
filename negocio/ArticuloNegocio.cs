@@ -83,7 +83,29 @@ namespace negocio
 
         public void modificar(Articulo art)
         {
-            //CREAR
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("UPDATE ARTICULOS SET CODIGO = @CODIGO, NOMBRE = @NOMBRE, DESCRIPCION = @DESCRIPCION, IDMARCA = @IDMARCA, IDCATEGORIA = @IDCATEGORIA, IMAGENURL = @IMAGENURL, PRECIO = @PRECIO WHERE ID = @ID");
+                datos.setearParametro("@Codigo", art.Codigo);
+                datos.setearParametro("@Nombre", art.Nombre);
+                datos.setearParametro("@Descripcion", art.Descripcion);
+                datos.setearParametro("@idMarca", art.Marca.ID);
+                datos.setearParametro("@idCategoria", art.Categoria.ID);
+                datos.setearParametro("@ImagenUrl", art.ImagenUrl);
+                datos.setearParametro("@Precio", art.Precio);
+
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
         }
             
 

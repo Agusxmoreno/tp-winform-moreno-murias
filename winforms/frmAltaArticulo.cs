@@ -20,6 +20,13 @@ namespace winforms
             InitializeComponent();
         }
 
+        public frmAltaArticulo(Articulo aux)
+        {
+            InitializeComponent();
+            this.articulo = aux;
+            Text = "Modificar Artículo";
+        }
+
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -78,12 +85,42 @@ namespace winforms
                 cboCategoria.DataSource = categoriaNegocio.listar();
                 cboCategoria.ValueMember = "Id";
                 cboCategoria.DisplayMember = "Descripcion";
+
+                if (articulo != null)
+                {
+                    txtCodigo.Text = articulo.Codigo;
+                    txtNombre.Text = articulo.Nombre;
+                    txtDescripcion.Text = articulo.Descripcion;
+                    txtImagen.Text = articulo.ImagenUrl;
+                    cargarImagen(articulo.ImagenUrl);
+                    cboCategoria.SelectedValue = articulo.Categoria.ID;
+                    cboMarca.SelectedValue = articulo.Marca.ID;
+                    txtPrecio.Text = articulo.Precio.ToString();
+                }
+
             }
             catch (Exception ex)
             {
 
                 MessageBox.Show(ex.ToString());
             }
+        }
+        private void cargarImagen(string imagen)
+        {
+            try
+            {
+                pbxArticulo.Load(imagen);
+            }
+            catch (Exception)
+            {
+
+                pbxArticulo.Load("http://ichno.org/dokuwiki/lib/exe/fetch.php?cache=&w=500&h=500&tok=f62c23&media=characters:placeholder.png");
+            }
+        }
+
+        private void txtImagen_Leave(object sender, EventArgs e)
+        {
+            cargarImagen(txtImagen.Text);
         }
     }
     
