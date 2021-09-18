@@ -121,5 +121,23 @@ namespace winforms
             modificar.ShowDialog();
             cargar();
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            DialogResult dialogresult = MessageBox.Show("¿Deseas eliminar este artículo?", "Eliminar", MessageBoxButtons.YesNo);
+
+            Articulo seleccionado;
+            seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+            frmAltaArticulo eliminar = new frmAltaArticulo(seleccionado);
+
+            if(dialogresult == DialogResult.Yes)
+            {
+                negocio.eliminar(seleccionado);
+            }
+
+            cargar();
+
+        }
     }
 }

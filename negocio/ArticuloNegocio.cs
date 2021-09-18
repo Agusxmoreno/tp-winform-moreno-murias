@@ -119,7 +119,30 @@ namespace negocio
                 datos.cerrarConexion();
             }
         }
-            
+        
+        
+        public void eliminar (Articulo art)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("DELETE FROM ARTICULOS WHERE ID = @ID");
+                datos.setearParametro("@ID", art.ID);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+
+
+        }
 
     }
 }
