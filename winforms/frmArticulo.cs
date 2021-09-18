@@ -41,15 +41,28 @@ namespace winforms
 
             try
             {
-                listaArticulos = negocio.listar();
-                dgvArticulos.DataSource = listaArticulos;
-                dgvArticulos.Columns["Id"].Visible = false;
-                dgvArticulos.Columns["Categoria"].Visible = false;
-                dgvArticulos.Columns["Descripcion"].Visible = false;
-                dgvArticulos.Columns["Marca"].Visible = false;
-                dgvArticulos.Columns["ImagenUrl"].Visible = false;
-                cargarImagen(listaArticulos[0].ImagenUrl);
-
+                if (!(txtNombre.Text.Trim()==""))
+                {
+                    listaArticulos = negocio.listar(txtNombre.Text);
+                    dgvArticulos.DataSource = listaArticulos;
+                    dgvArticulos.Columns["Id"].Visible = false;
+                    dgvArticulos.Columns["Categoria"].Visible = false;
+                    dgvArticulos.Columns["Descripcion"].Visible = false;
+                    dgvArticulos.Columns["Marca"].Visible = false;
+                    dgvArticulos.Columns["ImagenUrl"].Visible = false;
+                   
+                }
+                else
+                {
+                    listaArticulos = negocio.listar();
+                    dgvArticulos.DataSource = listaArticulos;
+                    dgvArticulos.Columns["Id"].Visible = false;
+                    dgvArticulos.Columns["Categoria"].Visible = false;
+                    dgvArticulos.Columns["Descripcion"].Visible = false;
+                    dgvArticulos.Columns["Marca"].Visible = false;
+                    dgvArticulos.Columns["ImagenUrl"].Visible = false;
+                    //cargarImagen(listaArticulos[0].ImagenUrl);
+                }
             }
             catch (Exception ex)
             {
@@ -138,6 +151,11 @@ namespace winforms
 
             cargar();
 
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            cargar();
         }
     }
 }

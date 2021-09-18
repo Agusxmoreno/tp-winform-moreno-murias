@@ -39,6 +39,12 @@ namespace winforms
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.lblMarcaBuscar = new System.Windows.Forms.Label();
+            this.lblCategoriaBuscar = new System.Windows.Forms.Label();
+            this.txtMarcaBuscar = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulos)).BeginInit();
             this.SuspendLayout();
@@ -47,7 +53,7 @@ namespace winforms
             // 
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvArticulos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvArticulos.Location = new System.Drawing.Point(12, 12);
+            this.dgvArticulos.Location = new System.Drawing.Point(12, 65);
             this.dgvArticulos.MultiSelect = false;
             this.dgvArticulos.Name = "dgvArticulos";
             this.dgvArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -57,7 +63,7 @@ namespace winforms
             // 
             // pbxArticulos
             // 
-            this.pbxArticulos.Location = new System.Drawing.Point(393, 24);
+            this.pbxArticulos.Location = new System.Drawing.Point(393, 77);
             this.pbxArticulos.Name = "pbxArticulos";
             this.pbxArticulos.Size = new System.Drawing.Size(142, 136);
             this.pbxArticulos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -67,7 +73,7 @@ namespace winforms
             // txtDescripcion
             // 
             this.txtDescripcion.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txtDescripcion.Location = new System.Drawing.Point(365, 233);
+            this.txtDescripcion.Location = new System.Drawing.Point(365, 286);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.ReadOnly = true;
@@ -77,7 +83,7 @@ namespace winforms
             // txtCategoria
             // 
             this.txtCategoria.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txtCategoria.Location = new System.Drawing.Point(451, 166);
+            this.txtCategoria.Location = new System.Drawing.Point(451, 219);
             this.txtCategoria.Name = "txtCategoria";
             this.txtCategoria.ReadOnly = true;
             this.txtCategoria.Size = new System.Drawing.Size(109, 20);
@@ -87,7 +93,7 @@ namespace winforms
             // txtMarca
             // 
             this.txtMarca.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txtMarca.Location = new System.Drawing.Point(451, 195);
+            this.txtMarca.Location = new System.Drawing.Point(451, 248);
             this.txtMarca.Name = "txtMarca";
             this.txtMarca.ReadOnly = true;
             this.txtMarca.Size = new System.Drawing.Size(109, 20);
@@ -97,7 +103,7 @@ namespace winforms
             // lblCategoria
             // 
             this.lblCategoria.AutoSize = true;
-            this.lblCategoria.Location = new System.Drawing.Point(377, 169);
+            this.lblCategoria.Location = new System.Drawing.Point(377, 222);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblCategoria.Size = new System.Drawing.Size(72, 13);
@@ -107,7 +113,7 @@ namespace winforms
             // lblMarca
             // 
             this.lblMarca.AutoSize = true;
-            this.lblMarca.Location = new System.Drawing.Point(401, 198);
+            this.lblMarca.Location = new System.Drawing.Point(401, 251);
             this.lblMarca.Name = "lblMarca";
             this.lblMarca.Size = new System.Drawing.Size(48, 13);
             this.lblMarca.TabIndex = 6;
@@ -115,7 +121,7 @@ namespace winforms
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(12, 302);
+            this.btnAgregar.Location = new System.Drawing.Point(12, 355);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
             this.btnAgregar.TabIndex = 1;
@@ -125,7 +131,7 @@ namespace winforms
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(105, 302);
+            this.btnModificar.Location = new System.Drawing.Point(105, 355);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 2;
@@ -135,7 +141,7 @@ namespace winforms
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(196, 302);
+            this.btnEliminar.Location = new System.Drawing.Point(196, 355);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 3;
@@ -143,11 +149,68 @@ namespace winforms
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(12, 27);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(123, 20);
+            this.txtNombre.TabIndex = 7;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(485, 24);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.TabIndex = 8;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Location = new System.Drawing.Point(13, 8);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(44, 13);
+            this.lblNombre.TabIndex = 9;
+            this.lblNombre.Text = "Nombre";
+            // 
+            // lblMarcaBuscar
+            // 
+            this.lblMarcaBuscar.AutoSize = true;
+            this.lblMarcaBuscar.Location = new System.Drawing.Point(150, 8);
+            this.lblMarcaBuscar.Name = "lblMarcaBuscar";
+            this.lblMarcaBuscar.Size = new System.Drawing.Size(37, 13);
+            this.lblMarcaBuscar.TabIndex = 12;
+            this.lblMarcaBuscar.Text = "Marca";
+            // 
+            // lblCategoriaBuscar
+            // 
+            this.lblCategoriaBuscar.AutoSize = true;
+            this.lblCategoriaBuscar.Location = new System.Drawing.Point(292, 8);
+            this.lblCategoriaBuscar.Name = "lblCategoriaBuscar";
+            this.lblCategoriaBuscar.Size = new System.Drawing.Size(52, 13);
+            this.lblCategoriaBuscar.TabIndex = 13;
+            this.lblCategoriaBuscar.Text = "Categoria";
+            // 
+            // txtMarcaBuscar
+            // 
+            this.txtMarcaBuscar.Location = new System.Drawing.Point(148, 27);
+            this.txtMarcaBuscar.Name = "txtMarcaBuscar";
+            this.txtMarcaBuscar.Size = new System.Drawing.Size(123, 20);
+            this.txtMarcaBuscar.TabIndex = 14;
+            // 
             // frmArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(572, 339);
+            this.ClientSize = new System.Drawing.Size(572, 388);
+            this.Controls.Add(this.txtMarcaBuscar);
+            this.Controls.Add(this.lblCategoriaBuscar);
+            this.Controls.Add(this.lblMarcaBuscar);
+            this.Controls.Add(this.lblNombre);
+            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
@@ -181,6 +244,12 @@ namespace winforms
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.Label lblMarcaBuscar;
+        private System.Windows.Forms.Label lblCategoriaBuscar;
+        private System.Windows.Forms.TextBox txtMarcaBuscar;
     }
 }
 

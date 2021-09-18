@@ -18,6 +18,7 @@ namespace winforms
         public frmAltaArticulo()
         {
             InitializeComponent();
+
         }
 
         public frmAltaArticulo(Articulo aux)
@@ -88,6 +89,7 @@ namespace winforms
 
                 if (articulo != null)
                 {
+                    
                     txtCodigo.Text = articulo.Codigo;
                     txtNombre.Text = articulo.Nombre;
                     txtDescripcion.Text = articulo.Descripcion;
