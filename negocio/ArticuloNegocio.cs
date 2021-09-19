@@ -65,7 +65,7 @@ namespace negocio
             }
         }
 
-        public List<Articulo> listar(string nombre)
+        public List<Articulo> listar(string nombre, int num)
 
         {
             List<Articulo> lista = new List<Articulo>();
@@ -73,10 +73,24 @@ namespace negocio
 
             try
             {
-                datos.setearConsulta("Select A.ID, Codigo, Nombre, A.Descripcion, M.Descripcion as Marca, C.Descripcion as Categoria, ImagenUrl, Precio, A.IdMarca, A.IdCategoria from Articulos A, Marcas M, CATEGORIAS C where A.IdMarca = M.Id AND A.IdCategoria = C.Id and nombre like '%"+ @nombre + "%'");
-                datos.setearParametro("@nombre", nombre);
-                datos.ejecutarLectura();
-
+                if (num == 1)
+                {
+                    datos.setearConsulta("Select A.ID, Codigo, Nombre, A.Descripcion, M.Descripcion as Marca, C.Descripcion as Categoria, ImagenUrl, Precio, A.IdMarca, A.IdCategoria from Articulos A, Marcas M, CATEGORIAS C where A.IdMarca = M.Id AND A.IdCategoria = C.Id and nombre like '%" + @nombre + "%'");
+                    datos.setearParametro("@nombre", nombre);
+                    datos.ejecutarLectura();
+                }
+                else if (num == 2)
+                {
+                    datos.setearConsulta("Select A.ID, Codigo, Nombre, A.Descripcion, M.Descripcion as Marca, C.Descripcion as Categoria, ImagenUrl, Precio, A.IdMarca, A.IdCategoria from Articulos A, Marcas M, CATEGORIAS C where A.IdMarca = M.Id AND A.IdCategoria = C.Id and M.Descripcion like '%" + @nombre + "%'");
+                    datos.setearParametro("@marca", nombre);
+                    datos.ejecutarLectura();
+                }
+                else
+                {
+                    datos.setearConsulta("Select A.ID, Codigo, Nombre, A.Descripcion, M.Descripcion as Marca, C.Descripcion as Categoria, ImagenUrl, Precio, A.IdMarca, A.IdCategoria from Articulos A, Marcas M, CATEGORIAS C where A.IdMarca = M.Id AND A.IdCategoria = C.Id and c.descripcion like '%" + @nombre + "%'");
+                    datos.setearParametro("@categoria", nombre);
+                    datos.ejecutarLectura();
+                }
                 while (datos.Lector.Read())
                 {
                     Articulo aux = new Articulo();

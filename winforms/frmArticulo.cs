@@ -23,9 +23,12 @@ namespace winforms
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            cboBuscar.Items.Add("Nombre");
+            cboBuscar.Items.Add("Marca");
+            cboBuscar.Items.Add("Categoría");
             cargar();
+        
         }
-
         private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
         {
             Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
@@ -41,9 +44,20 @@ namespace winforms
 
             try
             {
-                if (!(txtNombre.Text.Trim()==""))
+                if (!(txtBuscar.Text.Trim()==""))
                 {
-                    listaArticulos = negocio.listar(txtNombre.Text);
+                    if(cboBuscar.Text == "Nombre")
+                    {
+                        listaArticulos = negocio.listar(txtBuscar.Text, 1);
+                    }
+                    else if(cboBuscar.Text == "Marca")
+                    {
+                        listaArticulos = negocio.listar(txtBuscar.Text, 2);
+                    }
+                    else
+                    {
+                        listaArticulos = negocio.listar(txtBuscar.Text, 3);
+                    }
                     dgvArticulos.DataSource = listaArticulos;
                     dgvArticulos.Columns["Id"].Visible = false;
                     dgvArticulos.Columns["Categoria"].Visible = false;

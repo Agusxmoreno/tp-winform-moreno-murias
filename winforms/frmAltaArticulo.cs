@@ -124,6 +124,8 @@ namespace winforms
         {
             cargarImagen(txtImagen.Text);
         }
+
+     
     }
     
 }
